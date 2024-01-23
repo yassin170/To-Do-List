@@ -41,37 +41,51 @@ function addTask () {
 };
 
 
+let allBtnDelete 
+function supprimer() {
+    allBtnDelete = document.querySelectorAll("#btnDelete");
+    Array.from(allBtnDelete).forEach(element => {
+        element.addEventListener("click", () => {
+            element.parentElement.parentElement.remove();
+        });
+    });
+};
+
+let allBtnConfirm
+function valider() {
+    allBtnConfirm = document.querySelectorAll("#btnConfirm");
+    Array.from(allBtnConfirm).forEach(element => {
+        element.addEventListener("click", ()=> {
+            element.parentElement.parentElement.firstChild.classList.toggle("confirm");
+        });
+    });
+};
+
+// let allBtnModify
+// function modifier() {
+
+    
+// }
+
+
+
+
 btnAdd.addEventListener("click", () => {
     if (input.value == "") {
         return false;
     } else {
         addTask();
+        supprimer();
+        valider();
     }
 });
 
-function supprimer(params) {
-    
-}
-
-
-
-
-// btnAdd.addEventListener('click', ()=>{
-    // if (input.value == "") {
-    //     return false;
-    // };
-    // newBox = box.cloneNode(true);
-    // list.appendChild(newBox);
-    // task.value = input.value;
-    // input.value = "";
-// });
-
-// input.addEventListener("keydown", (ev) => {
-//     if (input.value == "") {
-//         return false;
-//     };
-//     if (ev.key == 'Enter'){
-//         newBox = box.cloneNode(true);
-//         list.appendChild(newBox);
-//         input.value = ""
-// }});
+input.addEventListener("keydown", (ev) => {
+    if (input.value == "") {
+        return false;
+    } 
+    if (ev.key == 'Enter'){
+        addTask();
+        supprimer();
+        valider();
+}});

@@ -106,7 +106,12 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: auto;
 }
+
+/* ::-webkit-scrollbar-track {
+    
+} */
 
 .taskImportant {
     width: 400px;
@@ -197,7 +202,8 @@ h1 {
     border: 2px solid  rgb(210, 68, 68);
 }
 
-
-/* .box:first-child {
-    display: none;
-} */
+.confirm {
+    background-color: rgb(116, 192, 109);
+    box-shadow: rgb(116, 192, 109) 6px 5px 8px 0px;
+    color: white;
+}
