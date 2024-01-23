@@ -12,6 +12,7 @@ function addTask () {
 
     let task = document.createElement("input");
     task.classList.add("taskImportant");
+    task.setAttribute('readonly','readonly')
     box.appendChild(task);
 
     let choice = document.createElement("div");
@@ -61,11 +62,23 @@ function valider() {
     });
 };
 
-// let allBtnModify
-// function modifier() {
+let allBtnModify;
+function modifier() {
+    allBtnModify = document.querySelectorAll("#btnModify");
+    Array.from(allBtnModify).forEach(element => {
+        element.addEventListener("click", ()=>{
+            element.parentElement.parentElement.firstChild.removeAttribute('readonly');
+            element.parentElement.parentElement.firstChild.addEventListener("keydown", (ev) => {
+                if (element.parentElement.parentElement.firstChild.value == "") {
+                    return false;
+                    } else if (ev.key == 'Enter'){
+                        element.parentElement.parentElement.firstChild.setAttribute('readonly','readonly');
+                        }});
+                    });
+                });
+            };
 
-    
-// }
+
 
 
 
@@ -77,6 +90,7 @@ btnAdd.addEventListener("click", () => {
         addTask();
         supprimer();
         valider();
+        modifier()
     }
 });
 
@@ -88,4 +102,5 @@ input.addEventListener("keydown", (ev) => {
         addTask();
         supprimer();
         valider();
+        modifier()
 }});
