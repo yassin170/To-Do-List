@@ -78,13 +78,126 @@ h1 {
     height: 30px;
     border: none;
     border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
     color: rgb(134, 109, 192);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid rgb(134, 109, 192);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 rgb(134, 109, 192);
 }
 
 .sortBtn:hover {
-    background-color: rgb(134, 109, 192);
-    border: none;
     color: white;
+    box-shadow: inset 0 -100px 0 0 rgb(134, 109, 192);
+}
+
+.sortBtn:active {
+    transform: scale(0.9);
 }
 
 
+#list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskImportant {
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(134, 109, 192);
+}
+
+.box {
+    background-image: url(../src/img/bgpurpletask.avif);
+    border-radius: 10px;
+    height: 100px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.choice {
+    display: flex;
+    gap: 5px;
+}
+
+.btnChoice {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color:  rgb(134, 109, 192);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid  rgb(134, 109, 192);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0  rgb(134, 109, 192);
+}
+
+
+.btnChoice:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0  rgb(134, 109, 192);
+}
+
+.sortBtn:active {
+    transform: scale(0.9);
+}
+
+#btnConfirm {
+    color:  rgb(134, 109, 192);
+    box-shadow: inset 0 0 0 0  rgb(134, 109, 192);
+    border: 2px solid  rgb(134, 109, 192);
+}
+
+#btnConfirm:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0  rgb(116, 192, 109);
+    border: 2px solid  rgb(116, 192, 109);
+}
+
+#btnModify {
+    color:  rgb(134, 109, 192);
+    box-shadow: inset 0 0 0 0  rgb(134, 109, 192);
+    border: 2px solid  rgb(134, 109, 192);
+}
+
+#btnModify:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0  rgb(75, 69, 195);
+    border: 2px solid  rgb(75, 69, 195);
+}
+
+#btnDelete {
+    color:  rgb(134, 109, 192);
+    box-shadow: inset 0 0 0 0  rgb(134, 109, 192);
+    border: 2px solid  rgb(134, 109, 192);
+}
+
+#btnDelete:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0  rgb(210, 68, 68);
+    border: 2px solid  rgb(210, 68, 68);
+}
+
+
+/* .box:first-child {
+    display: none;
+} */
